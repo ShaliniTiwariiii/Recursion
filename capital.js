@@ -13,14 +13,17 @@
 // console.log(cap(['hello','shalini','hiii']))
 
 
-function cap(arr,i){
-    //4 mins are left 
-    // sir se pucho
+function capitalizeFirst(arr) {
+    if (arr.length === 0) {
+      return [];
+    } else {
+      let capitalized = arr[0][0].toUpperCase() + arr[0].slice(1);
+      return [capitalized, ...capitalizeFirst(arr.slice(1))];
+    }
+  }
+  
+  let arr = ['hello', 'shalini', 'hiii'];
 
-    let newArr=[]
-  if(arr.length==i)return 
-
-cap(arr,i+1)
-return newArr.push(arr[i][0].toUpperCase()+arr[i].slice(1))
-}
-console.log(cap( ['hello','shalini','hiii'],0))
+  
+  console.log( capitalizeFirst(arr)); // Output: ['Hello', 'Shalini', 'Hiii']
+  

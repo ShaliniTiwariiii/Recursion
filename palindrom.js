@@ -21,10 +21,39 @@
 // }
 // console.log(palin('ini'))
 
-function anyRev(str){
-if(str.length<=1){
-    return str
+// function anyRev(str){
+// if(str.length<=1){
+//     return str
+// }
+// else return anyRev(str.slice(1))+str[0]
+// }
+// console.log(anyRev('shalini'))
+
+
+
+
+
+
+
+
+function isAlpha(str){
+return /^[0-9a-z]+$/gi.test(str)
 }
-else return anyRev(str.slice(1))+str[0]
+function rev(str){
+if(str.length<=1) return str
+return rev(str.slice(1))+str[0]
 }
-console.log(anyRev('shalini'))
+
+function palin(str){
+   let newStr=''
+   for(let i=0;i<str.length;i++){
+    if(isAlpha(str[i])){
+        newStr+=str[i]
+    }
+   }
+   if(newStr==rev(newStr)){
+    return true
+   }
+   return false
+}
+console.log(palin('madam,madams'))
