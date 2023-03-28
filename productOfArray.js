@@ -9,3 +9,25 @@ function product(a, i)
 console.log(product(a, 0))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

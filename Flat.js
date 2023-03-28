@@ -30,17 +30,55 @@ return newFlat
 // console.log(flat([1,2,3,4,[2,3,[1]]]))
 
 
-function flatB(arr){
-let arr1=[]
+// function A(arr){
+//     let b=[]
+// for(let i=0;i<arr.length;i++){
+//     if(Array.isArray(arr[i])===false){
+//         b.push(arr[i])
+//     }
+//     else{
+//         b=b.concat(A(arr[i]))
+//     }
+// }
+// return b
+// }
+// console.log(A([1,2,3,4,[2,3,[1]]]))
+
+
+
+function A(arr){
+if(arr.length<=1) return arr
+let b=[]
 for(let i=0;i<arr.length;i++){
-    console.log(arr[4])
-    if(Array.isArray(arr[i])==false){
-        arr1.push(arr[i])
+    if(!Array.isArray(arr[i])){
+        b.push(arr[i])
     }
     else{
-        arr1=arr1.concat(flatB(arr[i]))
+        b=b.concat(A(arr[i]))
     }
 }
-return arr1
+return b
 }
-console.log(flatB([1,2,3,4,[2,3,[1]]]))
+
+ console.log(A([1,2,3,4,[2,3,[1]]]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

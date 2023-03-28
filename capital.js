@@ -25,5 +25,20 @@ function capitalizeFirst(arr) {
   let arr = ['hello', 'shalini', 'hiii'];
 
   
-  console.log( capitalizeFirst(arr)); // Output: ['Hello', 'Shalini', 'Hiii']
+  // console.log( capitalizeFirst(arr)); // Output: ['Hello', 'Shalini', 'Hiii']
   
+
+
+
+  function capitaliseFn(arr){
+    let result=[]
+    if(arr.length==0) return []
+    //pull out arr[0] and capitalise is't first char
+    let s=arr[0][0].toUpperCase()+arr[0].slice(1)
+    result.push(s)
+    return result.concat(capitaliseFn(arr.slice(1)))
+ 
+  }
+  let array=['abc','pqr','xyz','jkl']
+
+  console.log( capitaliseFn(array))
